@@ -1,0 +1,59 @@
+.TH INTERNSCTL 1 2023-04-10 v0.1.0
+
+.SH NAME
+internsctl \- utility command for various operations
+
+.SH SYNOPSIS
+.B internsctl
+[\fB\-h\fR]
+[\fB\-?\fR]
+[\fB\-\-help\fR]
+[\fB\-\-version\fR]
+[\fB\-v\fR]
+
+.sh DESCRIPTION
+.B internsctl 
+a utility command to get cpu info, memory info, create and list user accounts and get file info
+
+.SH OPTIONS
+.TP
+.BR \-h ", " \-? ", " \-\-help
+displays this help information
+.BR \-v ", " \-\-version
+displays the version of this software
+.TP
+.BR cpu " " getinfo
+displays cpu info, depends on lscpu
+.TP
+.BR memory " " getinfo
+displays memory info, depends on free
+.TP
+.BR user " " create " " <username>
+creates user who can login to linux system and access his home
+.TP
+.BR user " " list 
+list all the regular users present on my server
+.TP
+.BR user " " list " " --sudo-only
+list all the users with sudo permissions present on my server
+.TP
+.BR file " " getinfo " " [options] " " <file-name>
+returns file stats, all if no options passed
+.TP
+.B OPTIONS
+--size, -s to print size
+--permissions, -p print file permissions
+--owner, o print file owner
+--last-modified, m
+
+
+.SH FILES
+.TP 
+.I /bin/internsctl.sh
+
+.SH AUTHOR
+Soham Jaiswal <ham@kodski.com, ham@cardboard.ink>
+
+.SH SEE ALSO
+\fBlscpu
+\fBfree
